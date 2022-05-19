@@ -14,9 +14,10 @@ module.exports = {
 
     res.send(enterprise);
   },
-  getTransactions: async(req,res)=>{
+  getTransactionsOfCompany: async(req,res)=>{
     const {id} = req.params;
-    const enterprise = await transactionModel.getTransactionsOfCompany(id)
+    const { final_payment} = req.query;
+    const enterprise = await transactionModel.getTransactionsOfCompany(id, final_payment)
 
     res.send(enterprise)
   }

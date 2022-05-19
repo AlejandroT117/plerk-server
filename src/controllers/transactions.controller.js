@@ -20,9 +20,9 @@ module.exports = {
     res.send(enterprise)
   },
   getEarningsByStatus: async (req, res) => {
-    const { status_trans, match_status, only_total } = req.query;
+    const { status_trans, final_payment, only_total} = req.query;
 
-    const earnings = await transactionModel.getEarningsByStatus(status_trans, match_status);
+    const earnings = await transactionModel.getEarningsByStatus(status_trans, final_payment);
 
     if(only_total){
       const total = earnings.reduce((total, curr)=> total + curr.totalEarnings, 0)

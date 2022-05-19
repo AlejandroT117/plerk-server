@@ -4,7 +4,7 @@ const enterpriseCtlr = require("../controllers/enterprises.controller");
 
 router.get("/", enterpriseCtlr.getByName);
 router.get("/:id", enterpriseCtlr.getById);
-router.get("/transactions/:id", enterpriseCtlr.getTransactions)
+router.get("/transactions/:id", enterpriseCtlr.getTransactionsOfCompany)
 
 
 module.exports = router;
