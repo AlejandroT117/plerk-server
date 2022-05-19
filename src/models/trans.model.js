@@ -60,7 +60,7 @@ class Transaction {
     try {
       let companies = [];
       if (status_transaction) {
-        companies = this.model.aggregate([
+        companies = await this.model.aggregate([
           {
             $match: { status_transaction: status_transaction },
           },
@@ -72,17 +72,17 @@ class Transaction {
           },
         ]);
       } else {
-        companies = this.model.aggregate([
+        companies = await this.model.aggregate([
           {
             $group: { _id: "$company", count: { $sum: 1 } },
           },
           {
-            $sort: { count: Number(order), _id: 1 },
+            $sort: { count: Number(order), _id: -Number(order) },
           },
         ]);
       }
       if (limit) {
-        return companies.limit(Number(limit));
+        return companies.slice(0, +limit);
       }
       return companies;
     } catch (e) {
@@ -90,14 +90,17 @@ class Transaction {
     }
   }
 
-  async getEarningsByCompany(status_transaction = "close") {
+  async getEarningsByCompany(status_transaction = "closed", order = -1) {
     try {
-      const companies = this.model.aggregate([
+      const companies = await this.model.aggregate([
         {
           $match: { status_transaction: status_transaction },
         },
         {
           $group: { _id: "$company", total: { $sum: "$price" } },
+        },
+        {
+          $sort: { total: Number(order), _id: -Number(order) },
         },
       ]);
 
@@ -107,9 +110,9 @@ class Transaction {
     }
   }
 
-  async getEarningsByStatus(status_transaction) {
+  async getEarningsByStatus(status_transaction, match_status = true) {
     try {
-      const earnings = this.model.aggregate([
+      const earnings = await this.model.aggregate([
         {
           $group: {
             _id: "$status_transaction",
@@ -119,14 +122,40 @@ class Transaction {
       ]);
 
       if (status_transaction) {
-        for (let i = 0; i < earnings.length; i++) {
-          if (earnings[i]._id === status_transaction) {
-            return earnings[i];
-          }
-        }
+        return earnings.filter((data) => {
+          return match_status === true
+            ? data._id === status_transaction
+            : data._id !== status_transaction;
+        });
       }
 
       return earnings;
+    } catch (e) {
+      return e;
+    }
+  }
+
+  async getEarningsByCompanyAndStatus(
+    order=-1,
+    status_transaction = "reversed",
+  ) {
+    try {
+      const companies = await this.model.aggregate([
+        {
+          $match: { status_transaction: status_transaction },
+        },
+        {
+          $group: {
+            _id: "$company",
+            count: { $sum: 1 },
+          },
+        },
+        {
+          $sort: { count: Number(order), _id: -Number(order) },
+        },
+      ]);
+
+      return companies
     } catch (e) {
       return e;
     }
