@@ -30,7 +30,11 @@ class Transaction {
           data.company_id = await enterpriseModel.getbyName(data.company);
           data.date = moment(data.date, "YYYY-MM-DD H:mm:ss.SSSSSSZ").unix();
           //final_payment
-          data.final_payment = data.status_transaction == 'closed' && data.status_approved=='true' ? data.price : '';
+          data.final_payment =
+            data.status_transaction == "closed" &&
+            data.status_approved == "true"
+              ? data.price
+              : "";
 
           await this.model.create(data);
           countDocs++;
@@ -116,7 +120,7 @@ class Transaction {
 
   async getEarningsByStatus(status_transaction, final_payment = false) {
     try {
-      const filter_sum = final_payment=='true'? 'final_payment': 'price';
+      const filter_sum = final_payment == "true" ? "final_payment" : "price";
 
       const earnings = await this.model.aggregate([
         {
@@ -128,7 +132,7 @@ class Transaction {
       ]);
 
       if (status_transaction) {
-        return earnings.filter((data) =>  data._id === status_transaction);
+        return earnings.filter((data) => data._id === status_transaction);
       }
 
       return earnings;
@@ -141,7 +145,7 @@ class Transaction {
     try {
       const companies = await this.model.aggregate([
         {
-          $match: { status_transaction},
+          $match: { status_transaction },
         },
         {
           $group: {
@@ -162,12 +166,12 @@ class Transaction {
 
   async getTransactionsOfCompany(
     company_id,
-    final_payment=false,
+    final_payment = false,
     status_transaction,
     order = -1
   ) {
     try {
-      if(final_payment!='true'){
+      if (final_payment != "true") {
         const company = await this.model.aggregate([
           {
             $match: { company_id: Types.ObjectId(company_id) },
@@ -175,23 +179,25 @@ class Transaction {
           {
             $group: {
               _id: {
-                "status": "$status_transaction",
-                "company": "$company"
+                status: "$status_transaction",
+                company: "$company",
               },
-              count: { $sum: 1 }
-            }
+              count: { $sum: 1 },
+            },
           },
           {
             $sort: { count: Number(order), _id: -Number(order) },
-          }
+          },
         ]);
 
-        if(status_transaction){
-          const status_company = company.find(data => data.status_transaction == status_transaction)
+        if (status_transaction) {
+          const status_company = company.find(
+            (data) => data.status_transaction == status_transaction
+          );
 
-          return status_company
+          return status_company;
         }
-        return company
+        return company;
       }
 
       const company = await this.model.aggregate([
@@ -199,20 +205,20 @@ class Transaction {
           $match: { company_id: Types.ObjectId(company_id) },
         },
         {
-          $match: { final_payment: {$ne:null} },
+          $match: { final_payment: { $ne: null } },
         },
         {
           $group: {
             _id: {
-              "status": "$status_transaction",
-              "company": "$company"
+              status: "$status_transaction",
+              company: "$company",
             },
             count: { $sum: 1 },
-          }
+          },
         },
         {
           $sort: { count: Number(order), _id: -Number(order) },
-        }
+        },
       ]);
 
       return company;
@@ -221,29 +227,33 @@ class Transaction {
     }
   }
 
-  async getNTransactionsByDate(company_id, order=-1){
-    try{
+  async getNTransactionsByDate(company_id, order = -1) {
+    try {
       const dates = this.model.aggregate([
         {
           $match: { company_id: Types.ObjectId(company_id) },
         },
         {
-          $project: { date_format: { $toDate: { $multiply: ["$date", 1000] } } },
+          $project: {
+            date_format: { $toDate: { $multiply: ["$date", 1000] } },
+          },
         },
         {
           $group: {
-            _id: { $dateToString: { format: "%d-%m-%Y", date: "$date_format" } },
+            _id: {
+              $dateToString: { format: "%d-%m-%Y", date: "$date_format" },
+            },
             count: { $sum: 1 },
           },
         },
         {
-          $sort: { count: Number(order)},
-        }
+          $sort: { count: Number(order) },
+        },
       ]);
 
-      return dates
-    }catch(e){
-      return e
+      return dates;
+    } catch (e) {
+      return e;
     }
   }
 }

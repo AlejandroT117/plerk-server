@@ -24,17 +24,17 @@ module.exports = {
 
     res.send(enterprise);
   },
-  getNTransactionsByDate: async(req,res)=>{
+  getNTransactionsByDate: async (req, res) => {
     const { id } = req.params;
-    const {order, only_one} = req.query;
-    
-    const dates = await transactionModel.getNTransactionsByDate(id, order)
+    const { order, only_one } = req.query;
 
-    if(only_one=='true'){
-      res.send(dates[0])
-      return
+    const dates = await transactionModel.getNTransactionsByDate(id, order);
+
+    if (only_one == "true") {
+      res.send(dates[0]);
+      return;
     }
 
-    res.send(dates)
-  }
+    res.send(dates);
+  },
 };
