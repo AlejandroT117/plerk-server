@@ -4,6 +4,7 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
+    "start": "node .",
     "dev": "nodemon --ignore './public/*' -r dotenv/config ."
   },
   "keywords": [],

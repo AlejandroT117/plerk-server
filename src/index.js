@@ -13,9 +13,9 @@ const { HOSTNAME, SCHEMA, DATABASE, USER, PASSWORD, OPTIONS } =
   require("./config").mongoConfig;
 let MONGO_URI = "mongodb://localhost:27017/plerk";
 
-if (process.env.NODE_ENV === "production") {
+//if (process.env.NODE_ENV === "production") {
   MONGO_URI = `${SCHEMA}://${USER}:${PASSWORD}@${HOSTNAME}/${DATABASE}?${OPTIONS}`;
-}
+//}
 
 //models to load data
 const enterpriseModel = require('./models/entreprise.model');
@@ -27,6 +27,7 @@ const unique_enterprises = require('./data/entreprises');
     await mongoose.connect(MONGO_URI);
     console.log(`Mongo connected to: ${MONGO_URI}`);
     //adding array of unique enterprises
+    //no se requiere correr estas líneas porque ya están los datos en un cluster de mongodb
     /* const new_enterprises = await enterpriseModel.loadEnterprises(unique_enterprises)
     console.log(new_enterprises) */
     //adding new transactions

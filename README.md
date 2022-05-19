@@ -28,7 +28,7 @@
 
   * luego modelé los esquemas necesarios para los datos en mongo
 
-  * Utilicé python para obtener un array de empresas únicas
+  * Utilicé python con la librería pandas para obtener un array de empresas únicas
 
   * Levanté un servidor con express y organicé mis carpetas y archivos de forma más limpia que me fue posible
 
