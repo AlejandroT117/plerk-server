@@ -1,0 +1,1719 @@
+{
+	"info": {
+		"_postman_id": "8a7f92e8-a836-49e1-90db-6767defa1155",
+		"name": "Plerk Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Servicio de resumen",
+			"item": [
+				{
+					"name": "La empresa con más ventas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transactions/sales/n?status_trans=closed&limit=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"sales",
+								"n"
+							],
+							"query": [
+								{
+									"key": "status_trans",
+									"value": "closed"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "La empresa con más ventas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/transactions/sales/n?status_trans=closed&limit=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"transactions",
+										"sales",
+										"n"
+									],
+									"query": [
+										{
+											"key": "status_trans",
+											"value": "closed"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-5I+d3myV/gxXlQu4Vh6VksagQr4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:28:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"Rappi\",\n        \"count\": 436\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "La empresa con menos ventas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transactions/sales/n?status_trans=closed&limit=1&order=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"sales",
+								"n"
+							],
+							"query": [
+								{
+									"key": "status_trans",
+									"value": "closed"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								},
+								{
+									"key": "order",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "La empresa con menos ventas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/transactions/sales/n?status_trans=closed&limit=1&order=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"transactions",
+										"sales",
+										"n"
+									],
+									"query": [
+										{
+											"key": "status_trans",
+											"value": "closed"
+										},
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "order",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-0TC0vPdQng2ReSF8fwiMlWiDApI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:28:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"youtube premium\",\n        \"count\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Precio total de transacciones qu SÍ se cobraron (solo total)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&only_total=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"sales",
+								"earnings"
+							],
+							"query": [
+								{
+									"key": "status_trans",
+									"value": "closed"
+								},
+								{
+									"key": "only_total",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Precio total de transacciones qu SÍ se cobraron (solo total)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&only_total=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"transactions",
+										"sales",
+										"earnings"
+									],
+									"query": [
+										{
+											"key": "status_trans",
+											"value": "closed"
+										},
+										{
+											"key": "only_total",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12-GwjhSwFRqZRXjrlOIEHdxn+trnw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:30:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 23493262\n}"
+						}
+					]
+				},
+				{
+					"name": "Precio total de transacciones que NO se cobraron (solo total)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&match_status=false&only_total=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"sales",
+								"earnings"
+							],
+							"query": [
+								{
+									"key": "status_trans",
+									"value": "closed"
+								},
+								{
+									"key": "match_status",
+									"value": "false"
+								},
+								{
+									"key": "only_total",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Precio total de transacciones que NO se cobraron (solo total)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&match_status=false&only_total=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"transactions",
+										"sales",
+										"earnings"
+									],
+									"query": [
+										{
+											"key": "status_trans",
+											"value": "closed"
+										},
+										{
+											"key": "match_status",
+											"value": "false"
+										},
+										{
+											"key": "only_total",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12-GwjhSwFRqZRXjrlOIEHdxn+trnw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:30:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"total\": 23493262\n}"
+						}
+					]
+				},
+				{
+					"name": "Empresa con más rechazos de ventas (reverse)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transactions/sales/enterprise/status?only_first=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"sales",
+								"enterprise",
+								"status"
+							],
+							"query": [
+								{
+									"key": "only_first",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Empresa con más rechazos de ventas (reverse)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/transactions/sales/enterprise/status?only_first=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"transactions",
+										"sales",
+										"enterprise",
+										"status"
+									],
+									"query": [
+										{
+											"key": "only_first",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "33"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21-3y5mV1cfETgEPsbGj5RU+i2mU34\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:30:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"Google Cloud\",\n    \"count\": 68\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Servicio de empresa",
+			"item": [
+				{
+					"name": "Nombre de empresa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/enterprises/62867ea2c1db03bdf39f8359",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enterprises",
+								"62867ea2c1db03bdf39f8359"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Nombre de empresa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/enterprises/62867ea2c1db03bdf39f8359",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"enterprises",
+										"62867ea2c1db03bdf39f8359"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "17"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"11-Bi0UezdfrlWx+EhJ08i+kRoNZOA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:31:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"telcel\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Total de transacciones que SÍ se cobraron",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/enterprises/transactions/62867ea2c1db03bdf39f8355?final_payment=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enterprises",
+								"transactions",
+								"62867ea2c1db03bdf39f8355"
+							],
+							"query": [
+								{
+									"key": "final_payment",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Total de transacciones que SÍ se cobraron",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/enterprises/transactions/62867ea2c1db03bdf39f8355?final_payment=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"enterprises",
+										"transactions",
+										"62867ea2c1db03bdf39f8355"
+									],
+									"query": [
+										{
+											"key": "final_payment",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-lFLhi5zeZ1uXZfXRYKeNxQLPUM0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:31:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": {\n            \"status\": \"closed\",\n            \"company\": \"rappi\"\n        },\n        \"count\": 49\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Total de transacciones que NO se cobraron",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/enterprises/transactions/62867ea2c1db03bdf39f8355?final_payment=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enterprises",
+								"transactions",
+								"62867ea2c1db03bdf39f8355"
+							],
+							"query": [
+								{
+									"key": "final_payment",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Total de transacciones que NO se cobraron",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/enterprises/transactions/62867ea2c1db03bdf39f8355?final_payment=false",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"enterprises",
+										"transactions",
+										"62867ea2c1db03bdf39f8355"
+									],
+									"query": [
+										{
+											"key": "final_payment",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"75-S2QqBrDdMyrEQZOV0Luh/BvjbX8\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:31:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": {\n            \"status\": \"closed\",\n            \"company\": \"rappi\"\n        },\n        \"count\": 52\n    },\n    {\n        \"_id\": {\n            \"status\": \"reversed\",\n            \"company\": \"rappi\"\n        },\n        \"count\": 34\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "El día que se registraron más transacciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/enterprises/transactions/dates/62867ea2c1db03bdf39f835d?only_one=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enterprises",
+								"transactions",
+								"dates",
+								"62867ea2c1db03bdf39f835d"
+							],
+							"query": [
+								{
+									"key": "only_one",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "El día que se registraron más transacciones",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/enterprises/transactions/dates/62867ea2c1db03bdf39f835d?only_one=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"enterprises",
+										"transactions",
+										"dates",
+										"62867ea2c1db03bdf39f835d"
+									],
+									"query": [
+										{
+											"key": "only_one",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e-7d5AwBFEACNOFlHojsuGsByvyWY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:31:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"01-04-2021\",\n    \"count\": 2\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Propuesta personal",
+			"item": [
+				{
+					"name": "N de transacciones por empresa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transactions/sales/n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"sales",
+								"n"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "N de transacciones por empresa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/transactions/sales/n",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"transactions",
+										"sales",
+										"n"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6196"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1834-H0dNOlXiu9YnIE47ml18GNqY6tQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:31:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"Rappi\",\n        \"count\": 478\n    },\n    {\n        \"_id\": \"Uber Eats\",\n        \"count\": 396\n    },\n    {\n        \"_id\": \"Netflix\",\n        \"count\": 180\n    },\n    {\n        \"_id\": \"Amazon\",\n        \"count\": 136\n    },\n    {\n        \"_id\": \"Spotify\",\n        \"count\": 115\n    },\n    {\n        \"_id\": \"Uber\",\n        \"count\": 95\n    },\n    {\n        \"_id\": \"rappi\",\n        \"count\": 86\n    },\n    {\n        \"_id\": \"Google Cloud\",\n        \"count\": 78\n    },\n    {\n        \"_id\": \"Didi\",\n        \"count\": 70\n    },\n    {\n        \"_id\": \"Youtube Premium\",\n        \"count\": 47\n    },\n    {\n        \"_id\": \"HBO Max\",\n        \"count\": 39\n    },\n    {\n        \"_id\": \"netflix\",\n        \"count\": 38\n    },\n    {\n        \"_id\": \"\",\n        \"count\": 37\n    },\n    {\n        \"_id\": \"AliExpress\",\n        \"count\": 32\n    },\n    {\n        \"_id\": \"uber eats\",\n        \"count\": 32\n    },\n    {\n        \"_id\": \"Mercado Pago\",\n        \"count\": 30\n    },\n    {\n        \"_id\": \"Disney+\",\n        \"count\": 29\n    },\n    {\n        \"_id\": \"PedidosYa\",\n        \"count\": 28\n    },\n    {\n        \"_id\": \"uber\",\n        \"count\": 24\n    },\n    {\n        \"_id\": \"Amazon Prime\",\n        \"count\": 22\n    },\n    {\n        \"_id\": \"pedidos ya\",\n        \"count\": 20\n    },\n    {\n        \"_id\": \"Headspace\",\n        \"count\": 17\n    },\n    {\n        \"_id\": \"Nintendo eshop\",\n        \"count\": 17\n    },\n    {\n        \"_id\": \"Plerk\",\n        \"count\": 17\n    },\n    {\n        \"_id\": \"Revolut\",\n        \"count\": 17\n    },\n    {\n        \"_id\": \"google cloud\",\n        \"count\": 17\n    },\n    {\n        \"_id\": \"patreon\",\n        \"count\": 16\n    },\n    {\n        \"_id\": \"The New York Times\",\n        \"count\": 15\n    },\n    {\n        \"_id\": \"amazon\",\n        \"count\": 14\n    },\n    {\n        \"_id\": \"amazon prime\",\n        \"count\": 14\n    },\n    {\n        \"_id\": \"Calm\",\n        \"count\": 13\n    },\n    {\n        \"_id\": \"audible\",\n        \"count\": 13\n    },\n    {\n        \"_id\": \"fluentu\",\n        \"count\": 12\n    },\n    {\n        \"_id\": \"Microsoft\",\n        \"count\": 11\n    },\n    {\n        \"_id\": \"ExpressVPN\",\n        \"count\": 10\n    },\n    {\n        \"_id\": \"Didi Food\",\n        \"count\": 9\n    },\n    {\n        \"_id\": \"Paypal\",\n        \"count\": 9\n    },\n    {\n        \"_id\": \"Telcel\",\n        \"count\": 9\n    },\n    {\n        \"_id\": \"Telmex\",\n        \"count\": 9\n    },\n    {\n        \"_id\": \"Total Play\",\n        \"count\": 9\n    },\n    {\n        \"_id\": \"Walmart\",\n        \"count\": 9\n    },\n    {\n        \"_id\": \"verificacion ks\",\n        \"count\": 9\n    },\n    {\n        \"_id\": \"Adobe\",\n        \"count\": 8\n    },\n    {\n        \"_id\": \"Apple\",\n        \"count\": 8\n    },\n    {\n        \"_id\": \"CFE\",\n        \"count\": 8\n    },\n    {\n        \"_id\": \"Kindle unlimited\",\n        \"count\": 8\n    },\n    {\n        \"_id\": \"Rappi Prime\",\n        \"count\": 8\n    },\n    {\n        \"_id\": \"cornershop\",\n        \"count\": 8\n    },\n    {\n        \"_id\": \"Izzi Internet\",\n        \"count\": 7\n    },\n    {\n        \"_id\": \"medium\",\n        \"count\": 7\n    },\n    {\n        \"_id\": \"tuenti\",\n        \"count\": 7\n    },\n    {\n        \"_id\": \"D-local\",\n        \"count\": 6\n    },\n    {\n        \"_id\": \"Hulu\",\n        \"count\": 6\n    },\n    {\n        \"_id\": \"Infinitum\",\n        \"count\": 6\n    },\n    {\n        \"_id\": \"Kushki\",\n        \"count\": 6\n    },\n    {\n        \"_id\": \"discord\",\n        \"count\": 6\n    },\n    {\n        \"_id\": \"izzy internet\",\n        \"count\": 6\n    },\n    {\n        \"_id\": \"mercado libre\",\n        \"count\": 6\n    },\n    {\n        \"_id\": \"staples\",\n        \"count\": 6\n    },\n    {\n        \"_id\": \"youtube premium\",\n        \"count\": 6\n    },\n    {\n        \"_id\": \"Dropbox\",\n        \"count\": 5\n    },\n    {\n        \"_id\": \"Izzy Internet\",\n        \"count\": 5\n    },\n    {\n        \"_id\": \"aliexpress\",\n        \"count\": 5\n    },\n    {\n        \"_id\": \"didi food\",\n        \"count\": 5\n    },\n    {\n        \"_id\": \"headspace\",\n        \"count\": 5\n    },\n    {\n        \"_id\": \"twitch\",\n        \"count\": 5\n    },\n    {\n        \"_id\": \"vs3\",\n        \"count\": 5\n    },\n    {\n        \"_id\": \"Bookmate\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"HBO MAX\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"Mubi\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"Playstation Network\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"Tacx\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"airbnb\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"comisión federal de electricidad\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"criterion channel\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"koroto\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"mercuryo\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"okboy\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"openpay\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"telmex\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"wise\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"Domestika\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Experian\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Gaia\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Learn Enough\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Paddle\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Paramount+\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Prime Video\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Riot games\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Staples\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Tinder\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Vecat\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"codecademy\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"digital ocean\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"disney+\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"la planchetta\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"mubi\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"natacha oceane\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"nordvpn\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"revolut\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"sodimac\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Appbar\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Crehana\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Minecraft\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Podomatic\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Sodimac\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Square Enix\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Supercell\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Sweat\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Weex\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"YouTube Music\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Zwift\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"atresplayer premium\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"bandcamp\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"beatride\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"bien limpito\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"binance\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"didi\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"dlocal\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"domestika\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"fintual\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"fpay\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"google colaboratory\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"h&m\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"les mills media\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"maimag\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"microsoft store\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"omgyes\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"paypal\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"pgsharp\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"promarketlatino\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"rappi prime\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"replit\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"riot games\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"telcel\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"zwift\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Amazon Music\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Apple Music\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"DX Electrónica\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Ecobici\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Eventos Globales\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Humblebundle\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Nespresso\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Shein\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Starbucks\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Tecno Eshop\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Udemy\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"adobe\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"apple music\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"blim\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"blinks labs\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"boardgamearena\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"bookmate\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"bumble\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"cabify\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"coursera\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"crehana\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"curiositystream\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"ddd yoga\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"devoto electronics\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"domino's pizza\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"down dog\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"dropbox\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"ebay\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"ecobici\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"edetsa\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"estadiotnts\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"expressvpn\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"feldroy\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"formula uno\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"frizata\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"funfotos\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"gaia\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"hboMAX\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"itch io game store\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"jfc electronica\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"ktronix\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"libertech\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"linkedin\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"metrogas cdmx\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"monokai\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"mundo manias\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"nadar de noche\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"new york times\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"nintendo eshop\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"ocho la super app\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"paddle\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"paramount pluss\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"penzu\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"playstation network\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"plerk\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"podomatic\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"self growth plan\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"starbucks\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"storytel\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"sublime\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"supercell videogame\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"sweat\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"talonro\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"tienda shopealo\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"tinder\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"tulotero\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"typeform\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"universidad de chile\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"wikimedia\",\n        \"count\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Precio total de transacciones por categoría sin cobrar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transactions/sales/earnings?final_payment=false",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"sales",
+								"earnings"
+							],
+							"query": [
+								{
+									"key": "final_payment",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Precio total de transacciones por categoría sin cobrar",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/transactions/sales/earnings?final_payment=false",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"transactions",
+										"sales",
+										"earnings"
+									],
+									"query": [
+										{
+											"key": "final_payment",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "209"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d1-4puQ3oaEekNjvx7CbQq9KRZVuFk\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:31:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"closed\",\n        \"totalEarnings\": 23493262\n    },\n    {\n        \"_id\": \"funding\",\n        \"totalEarnings\": 24313\n    },\n    {\n        \"_id\": \"funding-user\",\n        \"totalEarnings\": 15372\n    },\n    {\n        \"_id\": \"pending\",\n        \"totalEarnings\": 34764\n    },\n    {\n        \"_id\": \"reversed\",\n        \"totalEarnings\": 16333\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Precio total de transacciones cerradas por empresa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transactions/sales/enterprise",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"sales",
+								"enterprise"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Precio total de transacciones cerradas por empresa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/transactions/sales/enterprise",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"transactions",
+										"sales",
+										"enterprise"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "6374"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18e6-FY78iBsiDYBo2VCU622HFR9u66U\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:31:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"Rappi\",\n        \"total\": 319097\n    },\n    {\n        \"_id\": \"Uber Eats\",\n        \"total\": 205801\n    },\n    {\n        \"_id\": \"Amazon\",\n        \"total\": 121035\n    },\n    {\n        \"_id\": \"Netflix\",\n        \"total\": 108376\n    },\n    {\n        \"_id\": \"staples\",\n        \"total\": 66574\n    },\n    {\n        \"_id\": \"Spotify\",\n        \"total\": 60998\n    },\n    {\n        \"_id\": \"sodimac\",\n        \"total\": 52534\n    },\n    {\n        \"_id\": \"Mercado Pago\",\n        \"total\": 48020\n    },\n    {\n        \"_id\": \"rappi\",\n        \"total\": 40465\n    },\n    {\n        \"_id\": \"Sodimac\",\n        \"total\": 36539\n    },\n    {\n        \"_id\": \"uber eats\",\n        \"total\": 27500\n    },\n    {\n        \"_id\": \"mercado libre\",\n        \"total\": 27062\n    },\n    {\n        \"_id\": \"Uber\",\n        \"total\": 26922\n    },\n    {\n        \"_id\": \"Staples\",\n        \"total\": 24233\n    },\n    {\n        \"_id\": \"Revolut\",\n        \"total\": 22968\n    },\n    {\n        \"_id\": \"revolut\",\n        \"total\": 21996\n    },\n    {\n        \"_id\": \"cornershop\",\n        \"total\": 21826\n    },\n    {\n        \"_id\": \"HBO Max\",\n        \"total\": 20555\n    },\n    {\n        \"_id\": \"AliExpress\",\n        \"total\": 20292\n    },\n    {\n        \"_id\": \"netflix\",\n        \"total\": 19289\n    },\n    {\n        \"_id\": \"fpay\",\n        \"total\": 19176\n    },\n    {\n        \"_id\": \"Youtube Premium\",\n        \"total\": 16426\n    },\n    {\n        \"_id\": \"Headspace\",\n        \"total\": 15238\n    },\n    {\n        \"_id\": \"Amazon Prime\",\n        \"total\": 14539\n    },\n    {\n        \"_id\": \"Walmart\",\n        \"total\": 14022\n    },\n    {\n        \"_id\": \"maimag\",\n        \"total\": 13907\n    },\n    {\n        \"_id\": \"Telmex\",\n        \"total\": 12405\n    },\n    {\n        \"_id\": \"amazon\",\n        \"total\": 11738\n    },\n    {\n        \"_id\": \"Total Play\",\n        \"total\": 11511\n    },\n    {\n        \"_id\": \"audible\",\n        \"total\": 11260\n    },\n    {\n        \"_id\": \"PedidosYa\",\n        \"total\": 11160\n    },\n    {\n        \"_id\": \"Disney+\",\n        \"total\": 10195\n    },\n    {\n        \"_id\": \"Calm\",\n        \"total\": 10092\n    },\n    {\n        \"_id\": \"devoto electronics\",\n        \"total\": 9638\n    },\n    {\n        \"_id\": \"pedidos ya\",\n        \"total\": 9500\n    },\n    {\n        \"_id\": \"patreon\",\n        \"total\": 9070\n    },\n    {\n        \"_id\": \"uber\",\n        \"total\": 9068\n    },\n    {\n        \"_id\": \"ExpressVPN\",\n        \"total\": 9065\n    },\n    {\n        \"_id\": \"fluentu\",\n        \"total\": 9000\n    },\n    {\n        \"_id\": \"Learn Enough\",\n        \"total\": 8700\n    },\n    {\n        \"_id\": \"Microsoft\",\n        \"total\": 8287\n    },\n    {\n        \"_id\": \"Telcel\",\n        \"total\": 8095\n    },\n    {\n        \"_id\": \"jfc electronica\",\n        \"total\": 8069\n    },\n    {\n        \"_id\": \"formula uno\",\n        \"total\": 7999\n    },\n    {\n        \"_id\": \"Didi\",\n        \"total\": 7337\n    },\n    {\n        \"_id\": \"telmex\",\n        \"total\": 7051\n    },\n    {\n        \"_id\": \"sublime\",\n        \"total\": 7000\n    },\n    {\n        \"_id\": \"Kindle unlimited\",\n        \"total\": 6814\n    },\n    {\n        \"_id\": \"amazon prime\",\n        \"total\": 6749\n    },\n    {\n        \"_id\": \"\",\n        \"total\": 6496\n    },\n    {\n        \"_id\": \"Izzi Internet\",\n        \"total\": 6432\n    },\n    {\n        \"_id\": \"Tecno Eshop\",\n        \"total\": 6156\n    },\n    {\n        \"_id\": \"koroto\",\n        \"total\": 5999\n    },\n    {\n        \"_id\": \"codecademy\",\n        \"total\": 5997\n    },\n    {\n        \"_id\": \"natacha oceane\",\n        \"total\": 5569\n    },\n    {\n        \"_id\": \"Tinder\",\n        \"total\": 5521\n    },\n    {\n        \"_id\": \"feldroy\",\n        \"total\": 5470\n    },\n    {\n        \"_id\": \"frizata\",\n        \"total\": 5406\n    },\n    {\n        \"_id\": \"HBO MAX\",\n        \"total\": 5201\n    },\n    {\n        \"_id\": \"Paddle\",\n        \"total\": 5183\n    },\n    {\n        \"_id\": \"Nintendo eshop\",\n        \"total\": 4714\n    },\n    {\n        \"_id\": \"Apple\",\n        \"total\": 4501\n    },\n    {\n        \"_id\": \"comisión federal de electricidad\",\n        \"total\": 4302\n    },\n    {\n        \"_id\": \"omgyes\",\n        \"total\": 4263\n    },\n    {\n        \"_id\": \"nordvpn\",\n        \"total\": 3812\n    },\n    {\n        \"_id\": \"Domestika\",\n        \"total\": 3792\n    },\n    {\n        \"_id\": \"telcel\",\n        \"total\": 3642\n    },\n    {\n        \"_id\": \"Minecraft\",\n        \"total\": 3494\n    },\n    {\n        \"_id\": \"Hulu\",\n        \"total\": 3442\n    },\n    {\n        \"_id\": \"Tacx\",\n        \"total\": 3412\n    },\n    {\n        \"_id\": \"Adobe\",\n        \"total\": 3350\n    },\n    {\n        \"_id\": \"Rappi Prime\",\n        \"total\": 3348\n    },\n    {\n        \"_id\": \"openpay\",\n        \"total\": 3315\n    },\n    {\n        \"_id\": \"libertech\",\n        \"total\": 3237\n    },\n    {\n        \"_id\": \"Vecat\",\n        \"total\": 3221\n    },\n    {\n        \"_id\": \"medium\",\n        \"total\": 3000\n    },\n    {\n        \"_id\": \"talonro\",\n        \"total\": 3000\n    },\n    {\n        \"_id\": \"linkedin\",\n        \"total\": 2999\n    },\n    {\n        \"_id\": \"Zwift\",\n        \"total\": 2998\n    },\n    {\n        \"_id\": \"zwift\",\n        \"total\": 2998\n    },\n    {\n        \"_id\": \"Gaia\",\n        \"total\": 2997\n    },\n    {\n        \"_id\": \"domestika\",\n        \"total\": 2951\n    },\n    {\n        \"_id\": \"tienda shopealo\",\n        \"total\": 2924\n    },\n    {\n        \"_id\": \"typeform\",\n        \"total\": 2900\n    },\n    {\n        \"_id\": \"Google Cloud\",\n        \"total\": 2854\n    },\n    {\n        \"_id\": \"CFE\",\n        \"total\": 2758\n    },\n    {\n        \"_id\": \"Shein\",\n        \"total\": 2751\n    },\n    {\n        \"_id\": \"Izzy Internet\",\n        \"total\": 2744\n    },\n    {\n        \"_id\": \"la planchetta\",\n        \"total\": 2668\n    },\n    {\n        \"_id\": \"DX Electrónica\",\n        \"total\": 2618\n    },\n    {\n        \"_id\": \"The New York Times\",\n        \"total\": 2600\n    },\n    {\n        \"_id\": \"headspace\",\n        \"total\": 2598\n    },\n    {\n        \"_id\": \"Ecobici\",\n        \"total\": 2509\n    },\n    {\n        \"_id\": \"Mubi\",\n        \"total\": 2509\n    },\n    {\n        \"_id\": \"nintendo eshop\",\n        \"total\": 2497\n    },\n    {\n        \"_id\": \"ecobici\",\n        \"total\": 2448\n    },\n    {\n        \"_id\": \"digital ocean\",\n        \"total\": 2424\n    },\n    {\n        \"_id\": \"Dropbox\",\n        \"total\": 2398\n    },\n    {\n        \"_id\": \"Infinitum\",\n        \"total\": 2397\n    },\n    {\n        \"_id\": \"disney+\",\n        \"total\": 2245\n    },\n    {\n        \"_id\": \"Playstation Network\",\n        \"total\": 2223\n    },\n    {\n        \"_id\": \"aliexpress\",\n        \"total\": 2090\n    },\n    {\n        \"_id\": \"mubi\",\n        \"total\": 2036\n    },\n    {\n        \"_id\": \"curiositystream\",\n        \"total\": 1999\n    },\n    {\n        \"_id\": \"sweat\",\n        \"total\": 1999\n    },\n    {\n        \"_id\": \"Bookmate\",\n        \"total\": 1955\n    },\n    {\n        \"_id\": \"plerk\",\n        \"total\": 1950\n    },\n    {\n        \"_id\": \"self growth plan\",\n        \"total\": 1820\n    },\n    {\n        \"_id\": \"estadiotnts\",\n        \"total\": 1700\n    },\n    {\n        \"_id\": \"ebay\",\n        \"total\": 1672\n    },\n    {\n        \"_id\": \"nadar de noche\",\n        \"total\": 1653\n    },\n    {\n        \"_id\": \"crehana\",\n        \"total\": 1608\n    },\n    {\n        \"_id\": \"domino's pizza\",\n        \"total\": 1537\n    },\n    {\n        \"_id\": \"Starbucks\",\n        \"total\": 1500\n    },\n    {\n        \"_id\": \"riot games\",\n        \"total\": 1500\n    },\n    {\n        \"_id\": \"blinks labs\",\n        \"total\": 1499\n    },\n    {\n        \"_id\": \"les mills media\",\n        \"total\": 1499\n    },\n    {\n        \"_id\": \"D-local\",\n        \"total\": 1473\n    },\n    {\n        \"_id\": \"Didi Food\",\n        \"total\": 1430\n    },\n    {\n        \"_id\": \"google cloud\",\n        \"total\": 1427\n    },\n    {\n        \"_id\": \"universidad de chile\",\n        \"total\": 1422\n    },\n    {\n        \"_id\": \"coursera\",\n        \"total\": 1400\n    },\n    {\n        \"_id\": \"replit\",\n        \"total\": 1400\n    },\n    {\n        \"_id\": \"Udemy\",\n        \"total\": 1399\n    },\n    {\n        \"_id\": \"Kushki\",\n        \"total\": 1364\n    },\n    {\n        \"_id\": \"Paramount+\",\n        \"total\": 1336\n    },\n    {\n        \"_id\": \"ocho la super app\",\n        \"total\": 1299\n    },\n    {\n        \"_id\": \"expressvpn\",\n        \"total\": 1295\n    },\n    {\n        \"_id\": \"Experian\",\n        \"total\": 1262\n    },\n    {\n        \"_id\": \"Riot games\",\n        \"total\": 1213\n    },\n    {\n        \"_id\": \"dropbox\",\n        \"total\": 1199\n    },\n    {\n        \"_id\": \"monokai\",\n        \"total\": 1186\n    },\n    {\n        \"_id\": \"mundo manias\",\n        \"total\": 1152\n    },\n    {\n        \"_id\": \"Supercell\",\n        \"total\": 1100\n    },\n    {\n        \"_id\": \"Prime Video\",\n        \"total\": 1097\n    },\n    {\n        \"_id\": \"Weex\",\n        \"total\": 1009\n    },\n    {\n        \"_id\": \"dlocal\",\n        \"total\": 1005\n    },\n    {\n        \"_id\": \"pgsharp\",\n        \"total\": 1000\n    },\n    {\n        \"_id\": \"starbucks\",\n        \"total\": 1000\n    },\n    {\n        \"_id\": \"gaia\",\n        \"total\": 999\n    },\n    {\n        \"_id\": \"google colaboratory\",\n        \"total\": 999\n    },\n    {\n        \"_id\": \"microsoft store\",\n        \"total\": 999\n    },\n    {\n        \"_id\": \"penzu\",\n        \"total\": 999\n    },\n    {\n        \"_id\": \"youtube premium\",\n        \"total\": 994\n    },\n    {\n        \"_id\": \"hboMAX\",\n        \"total\": 926\n    },\n    {\n        \"_id\": \"Humblebundle\",\n        \"total\": 900\n    },\n    {\n        \"_id\": \"ddd yoga\",\n        \"total\": 899\n    },\n    {\n        \"_id\": \"storytel\",\n        \"total\": 834\n    },\n    {\n        \"_id\": \"bumble\",\n        \"total\": 818\n    },\n    {\n        \"_id\": \"down dog\",\n        \"total\": 799\n    },\n    {\n        \"_id\": \"playstation network\",\n        \"total\": 799\n    },\n    {\n        \"_id\": \"ktronix\",\n        \"total\": 796\n    },\n    {\n        \"_id\": \"Apple Music\",\n        \"total\": 757\n    },\n    {\n        \"_id\": \"tinder\",\n        \"total\": 699\n    },\n    {\n        \"_id\": \"twitch\",\n        \"total\": 664\n    },\n    {\n        \"_id\": \"tuenti\",\n        \"total\": 630\n    },\n    {\n        \"_id\": \"rappi prime\",\n        \"total\": 618\n    },\n    {\n        \"_id\": \"Podomatic\",\n        \"total\": 598\n    },\n    {\n        \"_id\": \"funfotos\",\n        \"total\": 595\n    },\n    {\n        \"_id\": \"supercell videogame\",\n        \"total\": 549\n    },\n    {\n        \"_id\": \"YouTube Music\",\n        \"total\": 544\n    },\n    {\n        \"_id\": \"wikimedia\",\n        \"total\": 544\n    },\n    {\n        \"_id\": \"tulotero\",\n        \"total\": 507\n    },\n    {\n        \"_id\": \"itch io game store\",\n        \"total\": 500\n    },\n    {\n        \"_id\": \"atresplayer premium\",\n        \"total\": 499\n    },\n    {\n        \"_id\": \"discord\",\n        \"total\": 499\n    },\n    {\n        \"_id\": \"bookmate\",\n        \"total\": 486\n    },\n    {\n        \"_id\": \"apple music\",\n        \"total\": 481\n    },\n    {\n        \"_id\": \"paramount pluss\",\n        \"total\": 446\n    },\n    {\n        \"_id\": \"boardgamearena\",\n        \"total\": 400\n    },\n    {\n        \"_id\": \"didi food\",\n        \"total\": 387\n    },\n    {\n        \"_id\": \"bandcamp\",\n        \"total\": 358\n    },\n    {\n        \"_id\": \"Square Enix\",\n        \"total\": 328\n    },\n    {\n        \"_id\": \"podomatic\",\n        \"total\": 299\n    },\n    {\n        \"_id\": \"beatride\",\n        \"total\": 239\n    },\n    {\n        \"_id\": \"new york times\",\n        \"total\": 200\n    },\n    {\n        \"_id\": \"verificacion ks\",\n        \"total\": 63\n    },\n    {\n        \"_id\": \"Appbar\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"Crehana\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"Eventos Globales\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"Nespresso\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"Plerk\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"Sweat\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"airbnb\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"binance\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"criterion channel\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"fintual\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"h&m\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"mercuryo\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"metrogas cdmx\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"okboy\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"promarketlatino\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"vs3\",\n        \"total\": 0\n    },\n    {\n        \"_id\": \"wise\",\n        \"total\": 0\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Precio total de transacciones qu SÍ se cobraron por categoría",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&final_payment=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"sales",
+								"earnings"
+							],
+							"query": [
+								{
+									"key": "status_trans",
+									"value": "closed"
+								},
+								{
+									"key": "final_payment",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Precio total de transacciones qu SÍ se cobraron por categoría",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&final_payment=true",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"transactions",
+										"sales",
+										"earnings"
+									],
+									"query": [
+										{
+											"key": "status_trans",
+											"value": "closed"
+										},
+										{
+											"key": "final_payment",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-RIiggdfRjdLJig56P3aEgkNppR0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:31:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"closed\",\n        \"totalEarnings\": 1863612\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Precio total de transacciones que NO se cobraron por categoría",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=reversed",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"sales",
+								"earnings"
+							],
+							"query": [
+								{
+									"key": "status_trans",
+									"value": "reversed"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Precio total de transacciones que NO se cobraron por categoría",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=reversed",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"transactions",
+										"sales",
+										"earnings"
+									],
+									"query": [
+										{
+											"key": "status_trans",
+											"value": "reversed"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2a-1UyoQgJCffVNifxPomQYdDXB17o\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:31:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"reversed\",\n        \"totalEarnings\": 16333\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Rechazos de ventas por empresa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/transactions/sales/enterprise/status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"transactions",
+								"sales",
+								"enterprise",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Rechazos de ventas por empresa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/transactions/sales/enterprise/status",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"transactions",
+										"sales",
+										"enterprise",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1764"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6e4-xWwJt9jEl35e19BcqjpNZJM8qLM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:32:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"Google Cloud\",\n        \"count\": 68\n    },\n    {\n        \"_id\": \"Rappi\",\n        \"count\": 41\n    },\n    {\n        \"_id\": \"rappi\",\n        \"count\": 34\n    },\n    {\n        \"_id\": \"Amazon\",\n        \"count\": 33\n    },\n    {\n        \"_id\": \"Youtube Premium\",\n        \"count\": 16\n    },\n    {\n        \"_id\": \"netflix\",\n        \"count\": 15\n    },\n    {\n        \"_id\": \"Uber Eats\",\n        \"count\": 13\n    },\n    {\n        \"_id\": \"google cloud\",\n        \"count\": 13\n    },\n    {\n        \"_id\": \"Netflix\",\n        \"count\": 12\n    },\n    {\n        \"_id\": \"pedidos ya\",\n        \"count\": 10\n    },\n    {\n        \"_id\": \"Paypal\",\n        \"count\": 9\n    },\n    {\n        \"_id\": \"Uber\",\n        \"count\": 9\n    },\n    {\n        \"_id\": \"Didi\",\n        \"count\": 7\n    },\n    {\n        \"_id\": \"Spotify\",\n        \"count\": 7\n    },\n    {\n        \"_id\": \"amazon prime\",\n        \"count\": 7\n    },\n    {\n        \"_id\": \"uber\",\n        \"count\": 7\n    },\n    {\n        \"_id\": \"uber eats\",\n        \"count\": 7\n    },\n    {\n        \"_id\": \"izzy internet\",\n        \"count\": 6\n    },\n    {\n        \"_id\": \"Mercado Pago\",\n        \"count\": 5\n    },\n    {\n        \"_id\": \"amazon\",\n        \"count\": 5\n    },\n    {\n        \"_id\": \"youtube premium\",\n        \"count\": 5\n    },\n    {\n        \"_id\": \"discord\",\n        \"count\": 4\n    },\n    {\n        \"_id\": \"Amazon Prime\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"D-local\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Walmart\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"headspace\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"twitch\",\n        \"count\": 3\n    },\n    {\n        \"_id\": \"Didi Food\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"HBO Max\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Headspace\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Hulu\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"PedidosYa\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"Playstation Network\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"bien limpito\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"cornershop\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"didi\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"paypal\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Adobe\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Amazon Music\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Kushki\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"Microsoft\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"YouTube Music\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"adobe\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"bandcamp\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"beatride\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"blim\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"cabify\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"criterion channel\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"didi food\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"digital ocean\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"edetsa\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"google colaboratory\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"les mills media\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"microsoft store\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"openpay\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"paddle\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"rappi prime\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"vs3\",\n        \"count\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Datos de la empreas por nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/enterprises?name=didi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enterprises"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "didi"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Datos de la empreas por nombre",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/enterprises?name=didi",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"enterprises"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "didi"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4a-yJlMc8SIpbPH6LDKvwNo+t+Q1rs\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:32:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"_id\": \"62867ea2c1db03bdf39f8411\",\n    \"name\": \"didi\",\n    \"status\": \"active\",\n    \"__v\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "N de transacciones por fecha de una empresa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/enterprises/transactions/dates/62867ea2c1db03bdf39f835d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"enterprises",
+								"transactions",
+								"dates",
+								"62867ea2c1db03bdf39f835d"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "N de transacciones por fecha de una empresa",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/enterprises/transactions/dates/62867ea2c1db03bdf39f835d",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"enterprises",
+										"transactions",
+										"dates",
+										"62867ea2c1db03bdf39f835d"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "342"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"156-Sul/8EA1FURVIcG4JuQCnOPf1OU\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 19 May 2022 19:32:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": \"14-03-2021\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"18-03-2021\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"01-04-2021\",\n        \"count\": 2\n    },\n    {\n        \"_id\": \"29-03-2021\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"25-03-2021\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"22-03-2021\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"31-03-2021\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"26-03-2021\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"20-03-2021\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"24-03-2021\",\n        \"count\": 1\n    },\n    {\n        \"_id\": \"28-03-2021\",\n        \"count\": 1\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}

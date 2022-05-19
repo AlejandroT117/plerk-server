@@ -23,22 +23,22 @@
 
 ### En cuanto al backend...
 
-*Primero, leí detenidamente las instrucciones e intenté abstraer una lógica para cada una de las funciones que necesitaría en la api de tal manera que con las menos funciones posibles, 
-pudiera satisfacer los servicios solicitados
+  * Primero, leí detenidamente las instrucciones e intenté abstraer una lógica para cada una de las funciones que necesitaría en la api de tal manera que con las menos funciones posibles, 
+  pudiera satisfacer los servicios solicitados
 
-*luego modelé los esquemas necesarios para los datos en mongo
+  * luego modelé los esquemas necesarios para los datos en mongo
 
-*Utilicé python para obtener un array de empresas únicas
+  * Utilicé python para obtener un array de empresas únicas
 
-*Levanté un servidor con express y organicé mis carpetas y archivos de forma más limpia que me fue posible
+  * Levanté un servidor con express y organicé mis carpetas y archivos de forma más limpia que me fue posible
 
-*Diseñé funciones para cargar los datos del csv a dos bases de datos en mongodb, una para los datos de la empresa y otra para las transacciones
+  * Diseñé funciones para cargar los datos del csv a dos bases de datos en mongodb, una para los datos de la empresa y otra para las transacciones
 
-*Añadí una función que permitiera añadir el Id de la empresa que estaba en la otra base de datos, a la base de datos de las transacciones
+  * Añadí una función que permitiera añadir el Id de la empresa que estaba en la otra base de datos, a la base de datos de las transacciones
 
-*Con el resto de funciones GET, hice algunas pruebas unitarias y paulatinamente fui construyendo mis funciones en los modelos
+  * Con el resto de funciones GET, hice algunas pruebas unitarias y paulatinamente fui construyendo mis funciones en los modelos
 
-*Simultáneamente, emplée postman para verificar que cada endpoint funcionara y realicé estos dos últimos pasos hasta que concluí los servicios requeridos
+  * Simultáneamente, emplée postman para verificar que cada endpoint funcionara y realicé estos dos últimos pasos hasta que concluí los servicios requeridos
 
 
 ### En cuanto al frontend...
