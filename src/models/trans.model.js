@@ -174,7 +174,10 @@ class Transaction {
           },
           {
             $group: {
-              _id: "$status_transaction",
+              _id: {
+                "status": "$status_transaction",
+                "company": "$company"
+              },
               count: { $sum: 1 }
             }
           },
@@ -200,7 +203,10 @@ class Transaction {
         },
         {
           $group: {
-            _id: "$status_transaction",
+            _id: {
+              "status": "$status_transaction",
+              "company": "$company"
+            },
             count: { $sum: 1 },
           }
         },
