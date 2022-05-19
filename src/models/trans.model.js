@@ -21,24 +21,24 @@ class Transaction {
   }
 
   loadData(csvFile) {
-    let countDocs = 0
+    let countDocs = 0;
     fs.createReadStream(csvFile)
       .pipe(csv())
       .on("data", async (data) => {
-        try{
+        try {
           data.company_id = await enterpriseModel.getbyName(data.company);
-          data.date = moment(data.date, "YYYY-MM-DD H:mm:ss.SSSSSSZ").unix()
+          data.date = moment(data.date, "YYYY-MM-DD H:mm:ss.SSSSSSZ").unix();
           await this.model.create(data);
-          countDocs++
-          console.log(`${countDocs} documentos creados`)
-        }catch(e){
-          console.log(`Load transactions data error ${e}`)
+          countDocs++;
+          console.log(`${countDocs} documentos creados`);
+        } catch (e) {
+          console.log(`Load transactions data error ${e}`);
         }
       });
   }
 
   async getAll(orderBy = "", search = "") {
-    try{
+    try {
       let find = search ? { email: { $regex: search, $options: "i" } } : {};
       let transactions = {};
       if (orderBy) {
@@ -50,50 +50,85 @@ class Transaction {
       }
 
       return transactions;
-    }catch(e){
-      return e
+    } catch (e) {
+      return e;
     }
   }
-  
 
-  async getNSales(status_transaction='closed', order=-1, limit){
-
+  async getNSales(status_transaction, order = -1, limit) {
     //order=-1 de mayor a menor / +1 de menor a mayor
-    try{
-      const companies = this.model.aggregate([
-        {
-          $match: {status_transaction: status_transaction}
-        },
-        {
-          $group: {_id: "$company", count: { $sum: 1 } }
-        },
-        {
-          $sort: { count: Number(order), _id: 1 },
-        }
-      ])
-      if(limit){
-        return companies.limit(Number(limit))
+    try {
+      let companies = [];
+      if (status_transaction) {
+        companies = this.model.aggregate([
+          {
+            $match: { status_transaction: status_transaction },
+          },
+          {
+            $group: { _id: "$company", count: { $sum: 1 } },
+          },
+          {
+            $sort: { count: Number(order), _id: 1 },
+          },
+        ]);
+      } else {
+        companies = this.model.aggregate([
+          {
+            $group: { _id: "$company", count: { $sum: 1 } },
+          },
+          {
+            $sort: { count: Number(order), _id: 1 },
+          },
+        ]);
       }
-      return companies
-    }catch(e){
-      return e
+      if (limit) {
+        return companies.limit(Number(limit));
+      }
+      return companies;
+    } catch (e) {
+      return e;
     }
   }
 
-  async getEarningsByCompany(status_transaction='close'){
-    try{
+  async getEarningsByCompany(status_transaction = "close") {
+    try {
       const companies = this.model.aggregate([
         {
-          $match: {status_transaction: 'closed'}
+          $match: { status_transaction: status_transaction },
         },
         {
-          $group: {_id: "$company", total: {$sum: "$price"}}
-        }
-      ])
+          $group: { _id: "$company", total: { $sum: "$price" } },
+        },
+      ]);
 
-      return companies
-    }catch(e){
-      return e
+      return companies;
+    } catch (e) {
+      return e;
+    }
+  }
+
+  async getEarningsByStatus(status_transaction) {
+    try {
+      const earnings = this.model.aggregate([
+        {
+          $group: {
+            _id: "$status_transaction",
+            totalEarnings: { $sum: "$price" },
+          },
+        },
+      ]);
+
+      if (status_transaction) {
+        for (let i = 0; i < earnings.length; i++) {
+          if (earnings[i]._id === status_transaction) {
+            return earnings[i];
+          }
+        }
+      }
+
+      return earnings;
+    } catch (e) {
+      return e;
     }
   }
 }
