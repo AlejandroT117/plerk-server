@@ -30,7 +30,9 @@ class Enterprise {
   async getbyName(name){
     try{
       const enterprise = await this.model.findOne({name})
-  
+      if(!enterprise){
+        return null
+      }     
       return enterprise
     }catch(e){
       return e
@@ -43,7 +45,7 @@ class Enterprise {
       if(!enterprise){
         return null
       }   
-      return enterprise
+      return {name: enterprise.name}
     }catch(e){
       return e
     }
