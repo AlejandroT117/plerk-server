@@ -26,8 +26,12 @@ class Transaction {
       .pipe(csv())
       .on("data", async (data) => {
         try {
+          //date format
           data.company_id = await enterpriseModel.getbyName(data.company);
           data.date = moment(data.date, "YYYY-MM-DD H:mm:ss.SSSSSSZ").unix();
+          //final_payment
+          data.final_payment = data.status_transaction == 'closed' && data.status_approved=='true' ? data.price : '';
+
           await this.model.create(data);
           countDocs++;
           console.log(`${countDocs} documentos creados`);
@@ -62,7 +66,7 @@ class Transaction {
       if (status_transaction) {
         companies = await this.model.aggregate([
           {
-            $match: { status_transaction: status_transaction },
+            $match: { status_transaction },
           },
           {
             $group: { _id: "$company", count: { $sum: 1 } },
@@ -94,10 +98,10 @@ class Transaction {
     try {
       const companies = await this.model.aggregate([
         {
-          $match: { status_transaction: status_transaction },
+          $match: { status_transaction },
         },
         {
-          $group: { _id: "$company", total: { $sum: "$price" } },
+          $group: { _id: "$company", total: { $sum: "$final_payment" } },
         },
         {
           $sort: { total: Number(order), _id: -Number(order) },
@@ -116,7 +120,7 @@ class Transaction {
         {
           $group: {
             _id: "$status_transaction",
-            totalEarnings: { $sum: "$price" },
+            totalEarnings: { $sum: "$final_payment" },
           },
         },
       ]);
@@ -135,14 +139,11 @@ class Transaction {
     }
   }
 
-  async getEarningsByCompanyAndStatus(
-    order=-1,
-    status_transaction = "reversed",
-  ) {
+  async getNStatusByCompany(order = -1, status_transaction = "reversed") {
     try {
       const companies = await this.model.aggregate([
         {
-          $match: { status_transaction: status_transaction },
+          $match: { status_transaction},
         },
         {
           $group: {
@@ -155,7 +156,40 @@ class Transaction {
         },
       ]);
 
-      return companies
+      return companies;
+    } catch (e) {
+      return e;
+    }
+  }
+
+  async getTransactionsOfCompany(
+    company_id,
+    order = -1,
+    status_transaction
+  ) {
+    try {
+      const company = await this.model.aggregate([
+        {
+          $match: { company_id: Types.ObjectId(company_id) },
+        },
+        {
+          $group: {
+            _id: "$status_transaction",
+            count: { $sum: 1 },
+          }
+        },
+        {
+          $sort: { count: Number(order), _id: -Number(order) },
+        }
+      ]);
+
+      if(status_transaction){
+        const status_company = company.find(data => data.status_transaction == status_transaction)
+
+        return status_company
+      }
+
+      return company;
     } catch (e) {
       return e;
     }

@@ -1,9 +1,6 @@
 const transactionModel = require("../models/trans.model");
 
 module.exports = {
-  mostSales: (req, res) => {
-    res.send("Hola Mundo");
-  },
   getNSales: async (req, res) => {
     const { status_trans, order, limit } = req.query;
 
@@ -34,15 +31,15 @@ module.exports = {
     }
     res.send(earnings)
   },
-  getEarningsByCompanyAndStatus: async(req,res)=>{
+  getNStatusByCompany: async(req,res)=>{
     const {status_trans, order, only_first} = req.query;
 
-    const companies = await transactionModel.getEarningsByCompanyAndStatus(order, status_trans);
+    const companies = await transactionModel.getNStatusByCompany(order, status_trans);
 
     if(only_first){
       res.send(companies[0])
       return
     }
     res.send(companies)
-  }
+  },
 };

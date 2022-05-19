@@ -1,4 +1,5 @@
 const enterpriseModel = require("../models/entreprise.model");
+const transactionModel = require("../models/trans.model");
 
 module.exports = {
   getByName: async (req, res) => {
@@ -13,4 +14,10 @@ module.exports = {
 
     res.send(enterprise);
   },
+  getTransactions: async(req,res)=>{
+    const {id} = req.params;
+    const enterprise = await transactionModel.getTransactionsOfCompany(id)
+
+    res.send(enterprise)
+  }
 };
