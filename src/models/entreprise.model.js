@@ -40,7 +40,9 @@ class Enterprise {
   async getById(id){
     try{
       const enterprise = await this.model.findById(id)
-  
+      if(!enterprise){
+        return null
+      }   
       return enterprise
     }catch(e){
       return e

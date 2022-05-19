@@ -6,4 +6,5 @@ router.get("/", enterpriseCtlr.getByName);
 
 router.get("/:id", enterpriseCtlr.getById);
 
+
 module.exports = router;
