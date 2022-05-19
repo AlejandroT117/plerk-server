@@ -14,11 +14,27 @@ module.exports = {
 
     res.send(enterprise);
   },
-  getTransactionsOfCompany: async(req,res)=>{
-    const {id} = req.params;
-    const { final_payment} = req.query;
-    const enterprise = await transactionModel.getTransactionsOfCompany(id, final_payment)
+  getTransactionsOfCompany: async (req, res) => {
+    const { id } = req.params;
+    const { final_payment } = req.query;
+    const enterprise = await transactionModel.getTransactionsOfCompany(
+      id,
+      final_payment
+    );
 
-    res.send(enterprise)
+    res.send(enterprise);
+  },
+  getNTransactionsByDate: async(req,res)=>{
+    const { id } = req.params;
+    const {order, only_one} = req.query;
+    
+    const dates = await transactionModel.getNTransactionsByDate(id, order)
+
+    if(only_one=='true'){
+      res.send(dates[0])
+      return
+    }
+
+    res.send(dates)
   }
 };

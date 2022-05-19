@@ -220,6 +220,32 @@ class Transaction {
       return e;
     }
   }
+
+  async getNTransactionsByDate(company_id, order=-1){
+    try{
+      const dates = this.model.aggregate([
+        {
+          $match: { company_id: Types.ObjectId(company_id) },
+        },
+        {
+          $project: { date_format: { $toDate: { $multiply: ["$date", 1000] } } },
+        },
+        {
+          $group: {
+            _id: { $dateToString: { format: "%d-%m-%Y", date: "$date_format" } },
+            count: { $sum: 1 },
+          },
+        },
+        {
+          $sort: { count: Number(order)},
+        }
+      ]);
+
+      return dates
+    }catch(e){
+      return e
+    }
+  }
 }
 
 module.exports = new Transaction();
