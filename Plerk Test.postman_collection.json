@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "8a7f92e8-a836-49e1-90db-6767defa1155",
 		"name": "Plerk Test",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19389097"
 	},
 	"item": [
 		{
@@ -231,12 +232,12 @@
 					]
 				},
 				{
-					"name": "Precio total de transacciones qu SÍ se cobraron (solo total)",
+					"name": "Precio total de transacciones que SÍ se cobraron (solo total)",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&only_total=true",
+							"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&only_total=true&final_payment=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -256,18 +257,22 @@
 								{
 									"key": "only_total",
 									"value": "true"
+								},
+								{
+									"key": "final_payment",
+									"value": "true"
 								}
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "Precio total de transacciones qu SÍ se cobraron (solo total)",
+							"name": "Precio total de transacciones que SÍ se cobraron (solo total)",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&only_total=true",
+									"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&only_total=true&final_payment=true",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -286,6 +291,10 @@
 										},
 										{
 											"key": "only_total",
+											"value": "true"
+										},
+										{
+											"key": "final_payment",
 											"value": "true"
 										}
 									]
@@ -313,15 +322,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "18"
+									"value": "17"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"12-GwjhSwFRqZRXjrlOIEHdxn+trnw\""
+									"value": "W/\"11-Swawh7aHBueBadkGhHZvr5avgFQ\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 19 May 2022 19:30:49 GMT"
+									"value": "Fri, 20 May 2022 04:03:57 GMT"
 								},
 								{
 									"key": "Connection",
@@ -333,7 +342,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"total\": 23493262\n}"
+							"body": "{\n    \"total\": 1863612\n}"
 						}
 					]
 				},
@@ -343,7 +352,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&match_status=false&only_total=true",
+							"raw": "http://localhost:8080/api/transactions/sales/earnings?only_total=true&match_status=false&status_trans=closed",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -357,16 +366,16 @@
 							],
 							"query": [
 								{
-									"key": "status_trans",
-									"value": "closed"
+									"key": "only_total",
+									"value": "true"
 								},
 								{
 									"key": "match_status",
 									"value": "false"
 								},
 								{
-									"key": "only_total",
-									"value": "true"
+									"key": "status_trans",
+									"value": "closed"
 								}
 							]
 						}
@@ -378,7 +387,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/api/transactions/sales/earnings?status_trans=closed&match_status=false&only_total=true",
+									"raw": "http://localhost:8080/api/transactions/sales/earnings?only_total=true&match_status=false&status_trans=closed",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -392,16 +401,16 @@
 									],
 									"query": [
 										{
-											"key": "status_trans",
-											"value": "closed"
+											"key": "only_total",
+											"value": "true"
 										},
 										{
 											"key": "match_status",
 											"value": "false"
 										},
 										{
-											"key": "only_total",
-											"value": "true"
+											"key": "status_trans",
+											"value": "closed"
 										}
 									]
 								}
@@ -428,15 +437,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "18"
+									"value": "15"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"12-GwjhSwFRqZRXjrlOIEHdxn+trnw\""
+									"value": "W/\"f-3rK9BxPT5irH+hNYQ+wVrZhcEos\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 19 May 2022 19:30:52 GMT"
+									"value": "Fri, 20 May 2022 04:04:18 GMT"
 								},
 								{
 									"key": "Connection",
@@ -448,7 +457,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"total\": 23493262\n}"
+							"body": "{\n    \"total\": 90782\n}"
 						}
 					]
 				},
@@ -564,7 +573,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/enterprises/62867ea2c1db03bdf39f8359",
+							"raw": "http://localhost:8080/api/enterprises/62869fa8b842fc5b3f32a0d7",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -573,7 +582,7 @@
 							"path": [
 								"api",
 								"enterprises",
-								"62867ea2c1db03bdf39f8359"
+								"62869fa8b842fc5b3f32a0d7"
 							]
 						}
 					},
@@ -649,7 +658,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/enterprises/transactions/62867ea2c1db03bdf39f8355?final_payment=true",
+							"raw": "http://localhost:8080/api/enterprises/transactions/62869fa8b842fc5b3f32a0cf?final_payment=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -659,7 +668,7 @@
 								"api",
 								"enterprises",
 								"transactions",
-								"62867ea2c1db03bdf39f8355"
+								"62869fa8b842fc5b3f32a0cf"
 							],
 							"query": [
 								{
@@ -676,7 +685,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/api/enterprises/transactions/62867ea2c1db03bdf39f8355?final_payment=true",
+									"raw": "http://localhost:8080/api/enterprises/transactions/62869fa8b842fc5b3f32a0cf?final_payment=true",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -686,7 +695,7 @@
 										"api",
 										"enterprises",
 										"transactions",
-										"62867ea2c1db03bdf39f8355"
+										"62869fa8b842fc5b3f32a0cf"
 									],
 									"query": [
 										{
@@ -718,15 +727,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "58"
+									"value": "30"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"3a-lFLhi5zeZ1uXZfXRYKeNxQLPUM0\""
+									"value": "W/\"1e-DfF4Uj4pLoqarK5jAtkNmEEufJA\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 19 May 2022 19:31:12 GMT"
+									"value": "Fri, 20 May 2022 05:22:06 GMT"
 								},
 								{
 									"key": "Connection",
@@ -738,7 +747,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"_id\": {\n            \"status\": \"closed\",\n            \"company\": \"rappi\"\n        },\n        \"count\": 49\n    }\n]"
+							"body": "[\n    {\n        \"_id\": \"closed\",\n        \"count\": 268\n    }\n]"
 						}
 					]
 				},
@@ -748,7 +757,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/enterprises/transactions/62867ea2c1db03bdf39f8355?final_payment=false",
+							"raw": "http://localhost:8080/api/enterprises/transactions/62869fa8b842fc5b3f32a0cf?final_payment=false",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -758,7 +767,7 @@
 								"api",
 								"enterprises",
 								"transactions",
-								"62867ea2c1db03bdf39f8355"
+								"62869fa8b842fc5b3f32a0cf"
 							],
 							"query": [
 								{
@@ -775,7 +784,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:8080/api/enterprises/transactions/62867ea2c1db03bdf39f8355?final_payment=false",
+									"raw": "http://localhost:8080/api/enterprises/transactions/62869fa8b842fc5b3f32a0cf",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -785,13 +794,7 @@
 										"api",
 										"enterprises",
 										"transactions",
-										"62867ea2c1db03bdf39f8355"
-									],
-									"query": [
-										{
-											"key": "final_payment",
-											"value": "false"
-										}
+										"62869fa8b842fc5b3f32a0cf"
 									]
 								}
 							},
@@ -817,15 +820,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "117"
+									"value": "88"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"75-S2QqBrDdMyrEQZOV0Luh/BvjbX8\""
+									"value": "W/\"58-cGPtP4Tjjn2ttq9B+LnZDkHGixE\""
 								},
 								{
 									"key": "Date",
-									"value": "Thu, 19 May 2022 19:31:15 GMT"
+									"value": "Fri, 20 May 2022 05:21:59 GMT"
 								},
 								{
 									"key": "Connection",
@@ -837,7 +840,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"_id\": {\n            \"status\": \"closed\",\n            \"company\": \"rappi\"\n        },\n        \"count\": 52\n    },\n    {\n        \"_id\": {\n            \"status\": \"reversed\",\n            \"company\": \"rappi\"\n        },\n        \"count\": 34\n    }\n]"
+							"body": "[\n    {\n        \"_id\": \"closed\",\n        \"count\": 436\n    },\n    {\n        \"_id\": \"reversed\",\n        \"count\": 41\n    },\n    {\n        \"_id\": \"pending\",\n        \"count\": 1\n    }\n]"
 						}
 					]
 				},
@@ -847,7 +850,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/api/enterprises/transactions/dates/62867ea2c1db03bdf39f835d?only_one=true",
+							"raw": "http://localhost:8080/api/enterprises/transactions/dates/62869fa8b842fc5b3f32a0cf?only_one=true",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -858,7 +861,7 @@
 								"enterprises",
 								"transactions",
 								"dates",
-								"62867ea2c1db03bdf39f835d"
+								"62869fa8b842fc5b3f32a0cf"
 							],
 							"query": [
 								{
@@ -1035,7 +1038,7 @@
 					]
 				},
 				{
-					"name": "Precio total de transacciones por categoría sin cobrar",
+					"name": "Precio total de transacciones por categoría",
 					"request": {
 						"method": "GET",
 						"header": [],

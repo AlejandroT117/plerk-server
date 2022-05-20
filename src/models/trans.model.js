@@ -129,11 +129,14 @@ class Transaction {
             totalEarnings: { $sum: `$${filter_sum}` },
           },
         },
+        {
+          $sort: { totalEarnings: -1},
+        },
       ]);
 
       if (status_transaction) {
         return earnings.filter((data) => {
-          return Boolean(match_status)==true? data._id === status_transaction: data._id !== status_transaction
+          return match_status===true? data._id === status_transaction: data._id !== status_transaction;
         });
       }
 
@@ -180,10 +183,7 @@ class Transaction {
           },
           {
             $group: {
-              _id: {
-                status: "$status_transaction",
-                company: "$company",
-              },
+              _id: "$status_transaction",
               count: { $sum: 1 },
             },
           },
@@ -211,10 +211,7 @@ class Transaction {
         },
         {
           $group: {
-            _id: {
-              status: "$status_transaction",
-              company: "$company",
-            },
+            _id: "$status_transaction",
             count: { $sum: 1 },
           },
         },
