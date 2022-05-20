@@ -26,6 +26,18 @@ class Enterprise {
       return e;
     }
   }
+  
+  async getAll(){
+    try{
+      const enterprises = await this.model.find({})
+      if (!enterprises) {
+        return null;
+      }
+      return enterprises
+    }catch(e){
+      return e
+    }
+  }
 
   async getbyName(name) {
     try {

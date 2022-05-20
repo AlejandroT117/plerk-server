@@ -118,7 +118,7 @@ class Transaction {
     }
   }
 
-  async getEarningsByStatus(status_transaction, final_payment = false) {
+  async getEarningsByStatus(status_transaction, final_payment = false, match_status=true) {
     try {
       const filter_sum = final_payment == "true" ? "final_payment" : "price";
 
@@ -132,7 +132,9 @@ class Transaction {
       ]);
 
       if (status_transaction) {
-        return earnings.filter((data) => data._id === status_transaction);
+        return earnings.filter((data) => {
+          return Boolean(match_status)==true? data._id === status_transaction: data._id !== status_transaction
+        });
       }
 
       return earnings;

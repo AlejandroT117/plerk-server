@@ -4,6 +4,9 @@ const mongoose = require("mongoose");
 const path = require("path");
 const PORT = process.env.PORT || 8080;
 
+/* logger */
+const logger = require('./log');
+const printInfo = require("./middlewares/printInfo");
 //routes
 const transactionsRouter = require("./routes/transactions.routes");
 const enterprisesRouter = require("./routes/enterprises.routes");
@@ -25,11 +28,11 @@ const unique_enterprises = require('./data/entreprises');
 (async () => {
   try {
     await mongoose.connect(MONGO_URI);
-    console.log(`Mongo connected to: ${MONGO_URI}`);
+    logger.log(`Mongo connected to: ${MONGO_URI}`);
     //adding array of unique enterprises
     //no se requiere correr estas líneas porque ya están los datos en un cluster de mongodb
     /* const new_enterprises = await enterpriseModel.loadEnterprises(unique_enterprises)
-    console.log(new_enterprises) */
+    logger.log(new_enterprises) */
     //adding new transactions
     /* transactionModel.loadData(path.join(__dirname, './data/test_database.csv')) */
 
@@ -61,10 +64,15 @@ const unique_enterprises = require('./data/entreprises');
     app.use("/api/transactions", transactionsRouter);
     app.use("/api/enterprises", enterprisesRouter);
 
+    app.get("*", function (req, res) {
+      res
+        .status(400)
+        .send({ status: 404, title: "Not Found", msg: "Route not found" });
+    });
     app.listen(PORT, () =>
-      console.log(`Listening on: http://localhost:${PORT}`)
+      logger.log(`Listening on: http://localhost:${PORT}`)
     );
   } catch (e) {
-    console.log(`Bad connection  ${e}`);
+    logger.log(`Bad connection  ${e}`);
   }
 })();

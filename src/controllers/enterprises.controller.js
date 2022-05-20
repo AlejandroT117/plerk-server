@@ -2,6 +2,11 @@ const enterpriseModel = require("../models/entreprise.model");
 const transactionModel = require("../models/trans.model");
 
 module.exports = {
+  getAll: async(req,res)=>{
+    const enterprise =await enterpriseModel.getAll()
+
+    res.send(enterprise)
+  },
   getByName: async (req, res) => {
     const { name } = req.query;
     const enterprise = await enterpriseModel.getbyName(name);
