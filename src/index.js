@@ -61,13 +61,11 @@ const unique_enterprises = require('./data/entreprises');
       res.sendFile(path.join(__dirname, "../build/index.html"));
     });
 
-    app.use("/api/transactions", transactionsRouter);
-    app.use("/api/enterprises", enterprisesRouter);
+    app.use("/api/transactions", printInfo, transactionsRouter);
+    app.use("/api/enterprises", printInfo, enterprisesRouter);
 
     app.get("*", function (req, res) {
-      res
-        .status(400)
-        .send({ status: 404, title: "Not Found", msg: "Route not found" });
+      res.redirect("/")
     });
     app.listen(PORT, () =>
       logger.log(`Listening on: http://localhost:${PORT}`)
